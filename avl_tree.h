@@ -32,8 +32,8 @@ class avl_tree{
     void pre_order_traversal(std::shared_ptr<avl_tree_node<T>>& node){
         if (!node) return;
         std::cout << node->val<< " ";
-        in_order_traversal(node->left);
-        in_order_traversal(node->right);
+        pre_order_traversal(node->left);
+        pre_order_traversal(node->right);
     }
     void in_order_traversal(std::shared_ptr<avl_tree_node<T>>& node){
         if (!node) return;
@@ -43,8 +43,8 @@ class avl_tree{
     }
     void post_order_traversal(std::shared_ptr<avl_tree_node<T>>& node){
         if (!node) return;
-        in_order_traversal(node->left);
-        in_order_traversal(node->right);
+        post_order_traversal(node->left);
+        post_order_traversal(node->right);
         std::cout << node->val<< " ";
     }
 
