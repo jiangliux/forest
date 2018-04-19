@@ -1,18 +1,26 @@
 #include <iostream>
-#include "avl_tree.h"
-#include "red_black_tree.h"
-#include <vector>
+#include <memory>
+#include <string>
+#include "trie.h"
+
 using namespace std;
 
 int main() {
-    red_black_tree<int> tree;
-    int n ;
+    int n;
     cin >> n;
-    for(int i=0, tmp ;i<n;++i){
-        cin >> tmp;
-        tree.insert_node(tmp);
+    trie t;
+    for(int i=0;i<n;++i){
+        string s;
+        cin >> s;
+        t.insert(s);
     }
-    tree.in_order_traversal();
-    cout << "\n";
-    tree.pre_order_traversal();
+    int m;
+    cin >> m;
+    for(int i=0;i<m;++i){
+        string s;
+        cin >> s;
+        if (t.search(s)) cout << "true" << endl;
+        else cout << "false" << endl;
+    }
+    return 0;
 }
